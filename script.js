@@ -65,6 +65,26 @@ console.log(totals);
 const profile = {
     firstName: "Deepak",
     lastName: "Singh",
-    pincode: "143001"
+    pincode: "143001",
+    friends: ["aman", "bhavesh", "chandan", "derek"]
 }
 console.log(profile);
+console.log(`${profile['firstName']} has ${profile.friends.length} friends and his best friend is ${profile.friends[0]} `);
+
+const mark = {
+    name: "mark",
+    height: 1.69,
+    mass: 78,
+    calclBMI: function () {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+
+};
+mark.calclBMI();
+console.log(mark.bmi);
+
+let temp = [17, 21, 23];
+for (let n = 0; n < temp.length; n++) {
+    console.log(`...${temp[n]}ºC in ${n} days`);
+};
