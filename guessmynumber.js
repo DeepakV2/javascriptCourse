@@ -23,14 +23,16 @@ check.addEventListener('click', function () {
     const guess = Number(guessInput.value);
     console.log(guess);
     if (!guess) {
-        displayMessage("⛔️ No number!entered");
+        displayMessage(`⛔️ No number!entered `);
     }
     else if (guess === secretNumber) {
-        displayMessage("🎉 Correct Number!");
+        displayMessage(`🎉 Correct Number! ${currentScore}`);
+        console.log(currentScore);
         number.textContent = secretNumber;
         document.querySelector('.maincontainer').style.backgroundColor = '#60b347';
         number.style.width = '30rem';
         check.setAttribute("disabled", true);
+
 
         if (currentScore > highestScore) {
             highestScore = currentScore;
@@ -46,6 +48,7 @@ check.addEventListener('click', function () {
             }
             currentScore--;
             score.textContent = currentScore;
+            console.log(currentScore);
         }
         else {
             displayMessage('💥 You lost the game!');
@@ -57,6 +60,7 @@ check.addEventListener('click', function () {
 again.addEventListener('click', function () {
     displayMessage('Start guessing...');
     secretNumber = Math.trunc(Math.random() * 20) + 1;
+    currentScore = 20;
     score.textContent = 20;
     number.textContent = "?";
     guessInput.value = "";
