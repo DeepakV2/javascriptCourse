@@ -32,6 +32,7 @@ check.addEventListener('click', function () {
         document.querySelector('.maincontainer').style.backgroundColor = '#60b347';
         number.style.width = '30rem';
         check.setAttribute("disabled", true);
+        check.style.cursor = 'not-allowed';
 
 
         if (currentScore > highestScore) {
@@ -66,6 +67,7 @@ again.addEventListener('click', function () {
     guessInput.value = "";
     document.querySelector('.maincontainer').style.backgroundColor = '#222';
     number.style.width = '15rem';
-    check.removeAttribute("disabled");;
+    check.removeAttribute("disabled");
+    check.style.cursor = 'pointer';
 })
 
